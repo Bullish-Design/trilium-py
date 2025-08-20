@@ -16,24 +16,27 @@ from setuptools import setup, find_packages
 # patch for package install in user directory
 site.ENABLE_USER_SITE = "--user" in sys.argv[1:]
 
+
 # Get version number
 def get_version():
     """Get version number from version.py file"""
     version_file = os.path.join(
-        os.path.dirname(__file__),
-        'src', 'trilium_py', 'version.py'
+        os.path.dirname(__file__), "src", "trilium_py", "version.py"
     )
-    with open(version_file, 'r', encoding='utf-8') as f:
-        version_line = [line for line in f.readlines() if line.startswith('__version__')]
+    with open(version_file, "r", encoding="utf-8") as f:
+        version_line = [
+            line for line in f.readlines() if line.startswith("__version__")
+        ]
         if not version_line:
-            raise RuntimeError('Version information not found')
-        version = version_line[0].split('=')[1].strip().strip("'").strip('"')
+            raise RuntimeError("Version information not found")
+        version = version_line[0].split("=")[1].strip().strip("'").strip('"')
         return version
+
 
 here = pathlib.Path(__file__).parent.resolve()
 
 # Get the long description from the README file
-long_description = (here / 'README.md').read_text(encoding='utf-8')
+long_description = (here / "README.md").read_text(encoding="utf-8")
 
 # Arguments marked as "Required" below must be included for upload to PyPI.
 # Fields marked as "Optional" may be commented out.
@@ -50,7 +53,7 @@ setup(
     # There are some restrictions on what makes a valid project name
     # specification here:
     # https://packaging.python.org/specifications/core-metadata/#name
-    name='trilium-py',  # Required
+    name="trilium-py",  # Required
     # Versions should comply with PEP 440:
     # https://www.python.org/dev/peps/pep-0440/
     #
@@ -62,7 +65,7 @@ setup(
     # corresponds to the "Summary" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#summary
     description=(
-        'Python client for ETAPI of Trilium Note. With some extra features powered by Python :)'
+        "Python client for ETAPI of Trilium Note. With some extra features powered by Python :)"
     ),
     # Optional
     # This is an optional longer description of your project that represents
@@ -84,18 +87,18 @@ setup(
     #
     # This field corresponds to the "Description-Content-Type" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#description-content-type-optional
-    long_description_content_type='text/markdown',  # Optional (see note above)
+    long_description_content_type="text/markdown",  # Optional (see note above)
     # This should be a valid link to your project's main homepage.
     #
     # This field corresponds to the "Home-Page" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#home-page-optional
-    url='https://github.com/nriver/trilium-py',  # Optional
+    url="https://github.com/nriver/trilium-py",  # Optional
     # This should be your name or the name of the organization which owns the
     # project.
-    author='Nriver',  # Optional
+    author="Nriver",  # Optional
     # This should be a valid email address corresponding to the author listed
     # above.
-    author_email='',  # Optional
+    author_email="",  # Optional
     # Classifiers help users find your project by categorizing it.
     #
     # For a list of valid classifiers, see https://pypi.org/classifiers/
@@ -104,21 +107,21 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 5 - Production/Stable',
+        "Development Status :: 5 - Production/Stable",
         # Indicate who your project is intended for
-        'Intended Audience :: Developers',
-        'Topic :: Software Development :: Build Tools',
+        "Intended Audience :: Developers",
+        "Topic :: Software Development :: Build Tools",
         # Pick your license as you wish
-        'License :: OSI Approved :: GNU Affero General Public License v3',
+        "License :: OSI Approved :: GNU Affero General Public License v3",
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate you support Python 3. These classifiers are *not*
         # checked by 'pip install'. See instead 'python_requires' below.
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.9',
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
-        'Programming Language :: Python :: 3 :: Only',
+        "Programming Language :: Python :: 3 :: Only",
     ],
     # This field adds keywords for your project which will appear on the
     # project page. What does your project relate to?
@@ -126,10 +129,10 @@ setup(
     # Note that this is a list of additional keywords, separated
     # by commas, to be used to assist searching for the distribution in a
     # larger catalog.
-    keywords='trilium, etapi, api client',  # Optional
+    keywords="trilium, etapi, api client",  # Optional
     # When your source code is in a subdirectory under the project root, e.g.
     # `src/`, it is necessary to specify the `package_dir` argument.
-    package_dir={'': 'src'},  # Optional
+    package_dir={"": "src"},  # Optional
     # You can just specify package directories manually here if your project is
     # simple. Or you can use find_packages().
     #
@@ -139,12 +142,12 @@ setup(
     #
     #   py_modules=["my_module"],
     #
-    packages=find_packages(where='src'),  # Required
+    packages=find_packages(where="src"),  # Required
     # Specify which Python versions you support. In contrast to the
     # 'Programming Language' classifiers above, 'pip install' will check this
     # and refuse to install the project if the version does not match. See
     # https://packaging.python.org/guides/distributing-packages-using-setuptools/#python-requires
-    python_requires='>=3.9, <4',
+    python_requires=">=3.9, <4",
     # This field lists other packages that your project depends on to run.
     # Any package you put here will be installed by pip when your project is
     # installed, so they must be valid existing projects.
@@ -152,17 +155,17 @@ setup(
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/discussions/install-requires-vs-requirements/
     install_requires=[
-        'BeautifulSoup4',
-        'requests',
-        "python-magic;sys_platform=='darwin'",
-        "python-magic;sys_platform=='linux'",
-        "python-magic-bin;platform_system=='Windows'",
-        'markdown2[all]',
-        'natsort',
-        'loguru',
-        'pillow',
-        'python-dateutil',
-        'tqdm',
+        "BeautifulSoup4",
+        "requests",
+        # "python-magic;sys_platform=='darwin'",
+        # "python-magic;sys_platform=='linux'",
+        # "python-magic-bin;platform_system=='Windows'",
+        "markdown2[all]",
+        "natsort",
+        "loguru",
+        "pillow",
+        "python-dateutil",
+        "tqdm",
     ],
     # Optional
     # List additional groups of dependencies here (e.g. development
@@ -210,9 +213,9 @@ setup(
     # maintainers, and where to support the project financially. The key is
     # what's used to render the link text on PyPI.
     project_urls={  # Optional
-        'Bug Reports': 'https://github.com/nriver/trilium-py/issues',
-        'Funding': 'https://github.com/nriver/trilium-py',
-        'Say Thanks!': 'https://github.com/nriver/trilium-py',
-        'Source': 'https://github.com/nriver/trilium-py/',
+        "Bug Reports": "https://github.com/nriver/trilium-py/issues",
+        "Funding": "https://github.com/nriver/trilium-py",
+        "Say Thanks!": "https://github.com/nriver/trilium-py",
+        "Source": "https://github.com/nriver/trilium-py/",
     },
 )

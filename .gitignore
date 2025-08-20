@@ -10,6 +10,7 @@ __pycache__/
 *.so
 *~
 .history/
+.tmuxp.yaml
 
 # due to using tox and pytest
 .tox

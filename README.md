@@ -6,6 +6,8 @@ English | <a href="README_CN.md">简体中文</a>
 
 Python client for Trilium Note's ETAPI and Web API, with additional advanced features :)
 
+**NOTE:** This fork just takes out python-magic-lib due to general setup annoyance. This is your first and final warning.  
+
 [![Downloads](https://static.pepy.tech/badge/trilium-py)](https://pepy.tech/project/trilium-py)
 [![Supported Versions](https://img.shields.io/pypi/pyversions/trilium-py.svg)](https://pypi.org/project/trilium-py)
 [![Supported Versions](https://img.shields.io/pypi/v/trilium-py?color=%2334D058&label=pypi%20package)](https://pypi.org/project/trilium-py)
