@@ -10,7 +10,8 @@ from typing import Literal
 from typing import Optional, Union
 
 import dateutil
-import magic
+
+# import magic
 import markdown2
 import requests
 from bs4 import BeautifulSoup
